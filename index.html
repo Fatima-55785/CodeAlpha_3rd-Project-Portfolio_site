@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Personal Portfolio & Task Management App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app" role="main">
+    <header>
+      <div><strong>MyPortfolio & TaskManager</strong></div>
+      <nav aria-label="User menu">
+        <button id="themeToggle" aria-label="Toggle dark/light theme" title="Toggle dark/light theme">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun" aria-hidden="true" focusable="false">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Sidebar for navigation -->
+      <nav class="sidebar" aria-label="Primary site navigation">
+        <a href="#about" class="active" tabindex="0" aria-current="page">
+          <span aria-hidden="true">👤</span> About
+        </a>
+        <a href="#skills" tabindex="0"><span aria-hidden="true">💼</span> Skills</a>
+        <a href="#projects" tabindex="0"><span aria-hidden="true">🗂️</span> Projects</a>
+        <a href="#resume" tabindex="0"><span aria-hidden="true">📄</span> Resume</a>
+        <a href="#contact" tabindex="0"><span aria-hidden="true">✉️</span> Contact</a>
+      </nav>
+
+      <!-- Portfolio content -->
+      <div id="content" tabindex="-1">
+        <section id="about" aria-label="About me section">
+          <h1>About Me</h1>
+          <p>Hello! Myself Fatima Khuwaja. I'm a passionate developer and designer with expertise in creating modern, high-quality, responsive web applications. I love turning ideas into beautiful and functional digital experiences.</p>
+          <p>My goal is to craft clean, user-friendly, and accessible interfaces with strong focus on performance and reliability.</p>
+        </section>
+
+        <section id="skills" aria-label="Skills section">
+          <h2>Skills</h2>
+          <ul aria-describedby="skills-description">
+            <li>JavaScript (ES6+)</li>
+            <li>HTML5 & CSS3 (Flexbox, Grid)</li>
+            <li>React / Vue / Angular</li>
+            <li>Node.js & Express</li>
+            <li>TypeScript</li>
+            <li>GitHub</li>
+            <li>Responsive Web Design</li>
+          </ul>
+        </section>
+
+        <section id="projects" aria-label="Projects section">
+          <h2>Projects</h2>
+          <div class="projects-grid">
+            <article class="project-card" tabindex="0" aria-label="Project: Portfolio Website">
+              <h3>Portfolio Website</h3>
+              <p>A modern personal portfolio with responsive design, smooth scroll, and interactive UI to showcase skills, projects, and contact info.</p>
+              <div class="project-links">
+                <a href="https://github.com/Fatima-55785/My_Portfolio.git" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://fatima-55785.github.io/My_Portfolio/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+              </div>
+            </article>
+            <article class="project-card" tabindex="0" aria-label="Project: Task Manager App">
+              <h3>Weather App</h3>
+              <p>Weather app provides current and forecasted weather conditions. It typically displays temperature and discription.</p>
+              <div class="project-links">
+                <a href="https://github.com/Fatima-55785/weather_app.git" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://fatima-55785.github.io/weather_app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+              </div>
+            </article>
+            <article class="project-card" tabindex="0" aria-label="Project: Blog Platform">
+              <h3>Professional Calculator</h3>
+              <p>I made this calculator using html, css and js. I added airthmetic operations.</p>
+              <div class="project-links">
+                <a href="https://github.com/Fatima-55785/CodeAlpha_2nd-Project-Calculator.git" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://fatima-55785.github.io/CodeAlpha_2nd-Project-Calculator/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="resume" aria-label="Resume section">
+          <h2>Resume</h2>
+          <p>Download my professional resume for detailed work history and qualifications.</p>
+          <a href="FATIMA.docx" download class="btn-download" aria-label="Download resume">Download Resume</a>
+        </section>
+
+        <section id="contact" aria-label="Contact section">
+          <h2>Contact Me</h2>
+          <form id="contact-form" novalidate>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required autocomplete="name" />
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email" />
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Your message" required></textarea>
+            <button type="submit" aria-label="Send message">Send Message</button>
+          </form>
+        </section>
+      </div>
+
+      <!-- Task manager panel -->
+      <section id="task-manager" aria-label="Task management application panel">
+        <header>Task Manager</header>
+
+        <form id="task-form" aria-label="Add new task form">
+          <input type="text" id="task-title" name="title" placeholder="Task title" required autocomplete="off" aria-required="true" aria-describedby="titleHelp" />
+          <input type="date" id="task-due" name="dueDate" aria-describedby="dueHelp" />
+          <select id="task-priority" name="priority" aria-label="Select task priority">
+            <option value="low" selected>Low Priority</option>
+            <option value="medium">Medium Priority</option>
+            <option value="high">High Priority</option>
+          </select>
+          <input type="text" id="task-category" name="category" placeholder="Category" autocomplete="off" aria-label="Task category" />
+          <textarea id="task-desc" name="description" rows="1" placeholder="Description (optional)"></textarea>
+          <button type="submit" aria-label="Add task">Add</button>
+        </form>
+
+        <!-- Filters -->
+        <div id="task-filters" role="region" aria-label="Task filters">
+          <select id="filter-status" aria-label="Filter by status">
+            <option value="all" selected>All</option>
+            <option value="pending">Pending</option>
+            <option value="completed">Completed</option>
+          </select>
+          <select id="filter-priority" aria-label="Filter by priority">
+            <option value="all" selected>All Priorities</option>
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+          <input id="search-tasks" type="search" placeholder="Search tasks..." aria-label="Search tasks" />
+        </div>
+
+        <!-- Tasks list -->
+        <div id="tasks-list" role="list" tabindex="0" aria-live="polite" aria-relevant="additions removals"></div>
+      </section>
+    </main>
+
+    <footer>
+      <div>© 2025 Fatima - Powered by Modern Web Standards</div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
